@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: annontator
+  labels:
+    app: annontator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: annontator
+  template:
+    metadata:
+      labels:
+        app: annontator
+    spec:
+      serviceAccount: my-sa
+      containers:
+        - name: annontator
+          image: nightowl98/annontator:v1.0
+          
