@@ -1,4 +1,5 @@
-module github.com/NightOwl998/random-scheduler
+module github.com/NightOwl998/annontator
+
 
 go 1.19
 
