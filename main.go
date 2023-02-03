@@ -3,16 +3,24 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/client-go/rest"
 )
 
 func main() {
-	config, err := clientcmd.BuildConfigFromFlags("", "/home/fadia/.kube/config")
+	//kubeconfig := flag.String("kubeconfig", "/home/fadia/.kube/config", "location to your config file")
+	//config, err := clientcmd.BuildConfigFromFlags("", *kubeconfig)
+	//config, err := clientcmd.BuildConfigFromFlags("", "/home//fadia/.kube/config")
+	//config, err := clientcmd.BuildConfigFromFlags("", "./config")
+	//if err != nil {
+	//panic(err)
+	//}
+	config, err := rest.InClusterConfig()
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	clientset, err := kubernetes.NewForConfig(config)
@@ -31,7 +39,7 @@ func main() {
 			annotations = make(map[string]string)
 		}
 
-		annotations["key"] = "value"
+		annotations["Fadia"] = "COOL"
 
 		node.SetAnnotations(annotations)
 

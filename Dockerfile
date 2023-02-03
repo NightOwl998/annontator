@@ -12,6 +12,7 @@ COPY go.sum .
 RUN go mod download
 COPY . .
 RUN go build -o ./ .
+RUN ls -l
 #RUN go build -o /annontator
-CMD [ "./" ]
+CMD [ "./random-scheduler" ]
 

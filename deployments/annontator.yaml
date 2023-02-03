@@ -14,8 +14,10 @@ spec:
       labels:
         app: annontator
     spec:
-      serviceAccount: my-sa
+      serviceAccount: random-scheduler
       containers:
         - name: annontator
-          image: nightowl98/annontator:v1.0
+          image: nightowl98/annontator:v2.3
+          imagePullPolicy: Always
+
           
