@@ -10,9 +10,9 @@ WORKDIR  /annontator
 COPY go.mod .
 COPY go.sum .
 RUN go mod download
-COPY . .
+COPY main.go .
 RUN go build -o ./ .
 RUN ls -l
 #RUN go build -o /annontator
-CMD [ "./random-scheduler" ]
+CMD [ "./annontator" ]
 

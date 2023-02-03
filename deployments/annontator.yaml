@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: annontator
+  name: annontator2
   labels:
     app: annontator
 spec:
@@ -17,7 +17,7 @@ spec:
       serviceAccount: random-scheduler
       containers:
         - name: annontator
-          image: nightowl98/annontator:v2.3
+          image: nightowl98/annontator:v2.4
           imagePullPolicy: Always
 
           
