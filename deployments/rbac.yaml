@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: default 
+  name: annontator-sa
+  labels:
+    app: annontator
+    component: annontator-sa
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: annontator
+subjects:
+- kind: ServiceAccount
+  name: annontator-sa
+  namespace: default 
+roleRef:
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+  name: cluster-admin

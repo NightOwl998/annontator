@@ -39,7 +39,7 @@ func main() {
 			annotations = make(map[string]string)
 		}
 
-		annotations["Fadia"] = "COOL"
+		annotations["new_value"] = "it_worked"
 
 		node.SetAnnotations(annotations)
 
@@ -48,7 +48,7 @@ func main() {
 		if err != nil {
 			fmt.Printf("Error updating node %s: %v\n", node.Name, err)
 		} else {
-			fmt.Printf("Successfully annotated node %s with key=value\n", node.Name)
+			fmt.Printf("Successfully annotated node %s with key=value, yayy\n", node.Name)
 		}
 	}
 }
