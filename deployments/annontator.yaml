@@ -17,7 +17,7 @@ spec:
       serviceAccount: annontator-sa
       containers:
         - name: annontator
-          image: nightowl98/annontator:v2.7
+          image: nightowl98/annontator:v2.8
           imagePullPolicy: Always
 
           

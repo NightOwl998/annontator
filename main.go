@@ -57,7 +57,7 @@ func main() {
 	}
 }
 func SendRequestAPI() string {
-	resp, err := http.Get("http://localhost:9090/wifi/isEnabled")
+	resp, err := http.Get("http://api-service:9090/wifi/isEnabled")
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -70,7 +70,7 @@ func SendRequestAPI() string {
 	//Convert the body to type string
 	sb := string(body)
 	if sb == "true" {
-		resp, err := http.Get("http://localhost:9090/wifi/quality")
+		resp, err := http.Get("http://api-service:9090/wifi/quality")
 		if err != nil {
 			log.Fatalln(err)
 		}
@@ -84,7 +84,7 @@ func SendRequestAPI() string {
 		sb := string(body)
 		return sb
 	} else {
-		resp, err := http.Get("http://localhost:9090/lte/quality")
+		resp, err := http.Get("http://api-service:9090/lte/quality")
 		if err != nil {
 			log.Fatalln(err)
 		}

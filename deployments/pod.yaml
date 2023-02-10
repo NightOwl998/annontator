@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annontator-1
+  labels:
+    app: annontator
+spec:
+    serviceAccount: annontator-sa
+    containers:
+        - name: annontator
+          image: nightowl98/annontator:v2.11
+          imagePullPolicy: Always
+
+          
